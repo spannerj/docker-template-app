@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    environment:
+     - PYTHONBUFFERED=0
+     - NAME=${NAME}  
+    build: .
+    ports:
+     - "5000:5000"
+    env_file: .env
+    volumes:
+      - .:/code    
+  # redis:
+  #   image: "redis:alpine"
+  # mongo:
+  #  image: "mvertes/alpine-mongo"
+  #  ports:
+  #   - "27017:27017"  
+  # postgres:
+  #   image: postgres:latest
+  #   ports:
+  #     - "5432:5432"
